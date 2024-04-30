@@ -1,0 +1,8 @@
+Relationships:
+
+- A "User" can have multiple "Reviews" (1:N)
+- A "Book" can have multiple "Reviews" (1:N)
+- A "Publisher" can have multiple "Books" (1:N)
+- A "Subject" can have multiple "Books" (1:N)
+- Books and Authors have a many-to-many relationship mediated by the "BookAuthor" table
+
