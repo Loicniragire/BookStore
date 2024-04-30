@@ -1,3 +1,6 @@
+Lazy Loading in Entity Framework Core
+- Lazy loading is the process whereby an entity or collection of entities is automatically loaded from the database the first time that a property referring to the entity/entities is accessed. When using Entity Framework Core, lazy loading is achieved by using the virtual keyword on a navigation property.
+
 Relationships:
 
 - A "User" can have multiple "Reviews" (1:N)
