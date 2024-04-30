@@ -19,15 +19,15 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Book>()
             .HasKey(b => b.Id);
 
-		modelBuilder.Entity<Book>()
-			.HasOne(b => b.Publisher)
-			.WithMany(p => p.Books)
-			.HasForeignKey(b => b.PublisherId);
+        modelBuilder.Entity<Book>()
+            .HasOne(b => b.Publisher)
+            .WithMany(p => p.Books)
+            .HasForeignKey(b => b.PublisherId);
 
-		modelBuilder.Entity<Book>()
-			.HasOne(b => b.Subject)
-			.WithMany(s => s.Books)
-			.HasForeignKey(b => b.SubjectId);
+        modelBuilder.Entity<Book>()
+            .HasOne(b => b.Subject)
+            .WithMany(s => s.Books)
+            .HasForeignKey(b => b.SubjectId);
 
         modelBuilder.Entity<Author>()
             .HasKey(a => a.Id);
@@ -38,34 +38,34 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Subject>()
             .HasKey(s => s.Id);
 
-		modelBuilder.Entity<Subject>()
-			.HasMany(s => s.Books)
-			.WithOne(b => b.Subject)
-			.HasForeignKey(b => b.SubjectId);
+        modelBuilder.Entity<Subject>()
+            .HasMany(s => s.Books)
+            .WithOne(b => b.Subject)
+            .HasForeignKey(b => b.SubjectId);
 
         modelBuilder.Entity<Publisher>()
             .HasKey(p => p.Id);
 
         modelBuilder.Entity<Review>()
-			.HasOne(r => r.Book)
-			.WithMany(b => b.Reviews)
-			.HasForeignKey(r => r.BookId);
+            .HasOne(r => r.Book)
+            .WithMany(b => b.Reviews)
+            .HasForeignKey(r => r.BookId);
 
-		modelBuilder.Entity<Review>()
-			.HasOne(r => r.User)
-			.WithMany(u => u.Reviews)
-			.HasForeignKey(r => r.UserId);
+        modelBuilder.Entity<Review>()
+            .HasOne(r => r.User)
+            .WithMany(u => u.Reviews)
+            .HasForeignKey(r => r.UserId);
 
-		modelBuilder.Entity<Review>()
-			.HasKey(r => r.Id);
+        modelBuilder.Entity<Review>()
+            .HasKey(r => r.Id);
 
         modelBuilder.Entity<User>()
             .HasKey(u => u.Id);
 
-		modelBuilder.Entity<User>()
-			.HasMany(u => u.Reviews)
-			.WithOne(r => r.User)
-			.HasForeignKey(r => r.UserId);
+        modelBuilder.Entity<User>()
+            .HasMany(u => u.Reviews)
+            .WithOne(r => r.User)
+            .HasForeignKey(r => r.UserId);
 
 
 
