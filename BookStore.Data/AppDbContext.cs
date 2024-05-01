@@ -1,4 +1,4 @@
-namespace Books.Data;
+namespace BookStore.Data;
 
 public class AppDbContext : DbContext
 {
@@ -18,6 +18,10 @@ public class AppDbContext : DbContext
     {
         modelBuilder.Entity<Book>()
             .HasKey(b => b.Id);
+
+		modelBuilder.Entity<Book>()
+			.Property(b => b.Price)
+			.HasColumnType("decimal(10,2)");
 
         modelBuilder.Entity<Book>()
             .HasOne(b => b.Publisher)

@@ -1,4 +1,4 @@
-namespace Books.Data;
+namespace BookStore.Data.Seed;
 
 public static class DataSeeder
 {

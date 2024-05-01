@@ -72,8 +72,8 @@ public class BookDataProvider : IBookDataProvider
 
     public void UpdateBook(Book book)
     {
-		_context.Books.Update(book);
-		_context.SaveChanges();
+        _context.Books.Update(book);
+        _context.SaveChanges();
     }
 }
 

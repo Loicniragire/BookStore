@@ -1,13 +1,11 @@
-namespace Books.Entities
-{
+namespace BookStore.Data.Entities;
     public class BookAuthor
-    {
-        public int BookId { get; set; }
-        public int AuthorId { get; set; }
+{
+    public int BookId { get; set; }
+    public int AuthorId { get; set; }
 
-        // Navigation properties
-        public virtual Book Book { get; set; }
-        public virtual Author Author { get; set; }
-    }
+    // Navigation properties
+    public virtual Book Book { get; set; }
+    public virtual Author Author { get; set; }
 }
 

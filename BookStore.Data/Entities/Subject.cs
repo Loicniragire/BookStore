@@ -1,4 +1,4 @@
-namespace Books.Entities;
+namespace BookStore.Data.Entities;
 
 public class Subject
 {
