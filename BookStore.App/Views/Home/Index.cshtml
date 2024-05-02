@@ -1,0 +1,27 @@
+﻿@model IEnumerable<BookStore.App.Models.HomeViewModel>
+
+<div class="text-center">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Book count</th>
+				<th>Author count</th>
+				<th>Category count</th>
+				<th>Publisher count</th>
+				<th>Review count</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var store in Model)
+			{
+				<tr>
+					<td>@store.BookCount</td>
+					<td>@store.AuthorCount</td>
+					<td>@store.GenreCount</td>
+					<td>@store.PublisherCount</td>
+					<td>@store.ReviewCount</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,6 @@
+Add Database Migrations:
+dotnet ef migrations add InitialCreate -p ../BookStore.Data/BookStore.Data.csproj -s BooStore.csproj
+
+Update database:
+dotnet ef database update
+

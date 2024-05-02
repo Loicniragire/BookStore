@@ -1,0 +1,36 @@
+@model IEnumerable<BookStore.App.Models.PublishersViewModel>
+
+<div class="text-center">
+    <h1 class="display-4">Publishers</h1>
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Publisher</th>
+				<th>Books</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var publisher in Model)
+			{
+				<tr>
+					<td>@publisher.Name</td>
+					<td>
+						<ul>
+							@foreach (var book in publisher.Books)
+							{
+								<li>@book.Title</li>
+								<li>@book.Author</li>
+								<li>@book.Category</li>
+								<li>@book.Language</li>
+								<li>@book.Pages</li>
+								<li>@book.Price</li>
+								<li>@book.Description</li>
+							}
+						</ul>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
+

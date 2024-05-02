@@ -1,0 +1,23 @@
+@model IEnumerable<BookStore.App.Models.AuthorsViewModel>
+
+<div class="text-center">
+    <h1 class="display-4">Authors</h1>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Author Name</th>
+				<th>Number of Books</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var author in Model)
+			{
+				<tr>
+					<td>@author.Name</td>
+					<td>@author.BookCount</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
+

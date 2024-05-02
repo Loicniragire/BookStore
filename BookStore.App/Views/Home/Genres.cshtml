@@ -1,0 +1,22 @@
+@model IEnumerable<BookStore.App.Models.GenresViewModel>
+
+<div class="text-center">
+    <h1 class="display-4">Genres</h1>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Genre Name</th>
+				<th>Number of Books</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var genre in Model)
+			{
+				<tr>
+					<td>@genre.Name</td>
+					<td>@genre.BookCount</td>
+				</tr>
+			}
+		</tbody>
+</div>
+
