@@ -25,17 +25,23 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles(); 
+
+app.UseRouting();
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.UseStaticFiles(); // for serving static files included in Angular's output
+/* app.UseAuthorization(); */
 
-app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapFallbackToFile("ClientApp/dist/index.html"); // for Angular routing
+// setup the fallback route for angular.
+// In this case the fallback route serves the index.html of the Angular app for any route not recognized by MVC route.
+app.MapFallbackToFile("ClientApp/dist/index.html", new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot"))
+});
 
 
 app.Run();
