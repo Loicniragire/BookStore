@@ -18,4 +18,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <Target Name="BuildAngular" AfterTargets="Build">
+    <Exec Command="cd ClientApp &amp;&amp; npm install &amp;&amp; ng build --configuration production" />
+  </Target>
+
 </Project>
