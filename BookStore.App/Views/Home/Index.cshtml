@@ -1,27 +1,25 @@
 ﻿@model IEnumerable<BookStore.App.Models.HomeViewModel>
 
-<div class="text-center">
-	<table class="table table-striped">
-		<thead>
-			<tr>
-				<th>Book count</th>
-				<th>Author count</th>
-				<th>Category count</th>
-				<th>Publisher count</th>
-				<th>Review count</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (var store in Model)
-			{
-				<tr>
-					<td>@store.BookCount</td>
-					<td>@store.AuthorCount</td>
-					<td>@store.GenreCount</td>
-					<td>@store.PublisherCount</td>
-					<td>@store.ReviewCount</td>
-				</tr>
-			}
-		</tbody>
-	</table>
-</div>
+
+@{
+    Layout = null;  // Optional: Avoids loading the MVC layout page if you want Angular to handle the entire view.
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Angular App</title>
+    <base href="/" />
+</head>
+<body>
+    <app-root>Loading...</app-root>  <!-- Angular's root component -->
+    
+    <!-- Reference Angular build output files -->
+    <!-- <script src="runtime.js"></script> -->
+    <script src="browser/polyfills.js"></script>
+    <!-- <script src="styles.js"></script> -->
+    <!-- <script src="vendor.js"></script> -->
+    <script src="browser/main.js"></script>
+</body>
+</html>
